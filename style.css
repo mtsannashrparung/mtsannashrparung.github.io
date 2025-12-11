@@ -66,6 +66,8 @@ html {
   & .title {
     font-family: 'arial-black';
     text-transform: uppercase;
+    font-size: 2rem;
+    text-shadow: 3px;
   }
 
   & .description {
