@@ -120,6 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     // Judul Section
-    sr.reveal("h1, h2", { origin: "top", distance: "30px" });
+    sr.reveal("h1", { origin: "top", distance: "30px" });
   }
 });
