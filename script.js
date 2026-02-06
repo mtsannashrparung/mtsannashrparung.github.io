@@ -147,3 +147,39 @@ document.addEventListener("DOMContentLoaded", () => {
     sr.reveal("h1", { origin: "top", distance: "30px" });
   }
 });
+
+// ===============================================
+// 4. LIGHTBOX FUNCTION (GLOBAL)
+// ===============================================
+function openLightbox(element) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  
+  if (lightbox && lightboxImg) {
+    // Set gambar popup sesuai gambar yang diklik
+    lightboxImg.src = element.src;
+    
+    // Tampilkan lightbox
+    lightbox.classList.remove("hidden");
+    
+    // Animasi zoom in halus
+    setTimeout(() => {
+      lightboxImg.classList.remove("scale-90");
+      lightboxImg.classList.add("scale-100");
+    }, 10);
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  
+  if (lightbox) {
+    // Sembunyikan lightbox
+    lightbox.classList.add("hidden");
+    if (lightboxImg) {
+      lightboxImg.classList.remove("scale-100");
+      lightboxImg.classList.add("scale-90");
+    }
+  }
+}
