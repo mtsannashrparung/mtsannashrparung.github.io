@@ -32,9 +32,6 @@
   <body class="font-sans text-gray-800 antialiased overflow-x-hidden">
     
 
-    <!-- ========================================= -->
-    <!-- NAVBAR SECTION                            -->
-    <!-- ========================================= -->
     <header
       id="navbar"
       class="fixed w-full top-0 z-50 bg-transparent transition-all duration-300"
@@ -82,18 +79,6 @@
             >Program</a
           >
           <a
-            href="#prestasi"
-            onclick="closeMenu()"
-            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
-            >Prestasi</a
-          >
-          <a
-            href="#berita"
-            onclick="closeMenu()"
-            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
-            >Berita</a
-          >
-          <a
             href="#fasilitas"
             onclick="closeMenu()"
             class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
@@ -109,12 +94,9 @@
       </nav>
     </header>
 
-    <!-- ========================================= -->
-    <!-- HOME SECTION                              -->
-    <!-- ========================================= -->
     <section
       id="home"
-      class="relative bg-[url('Assets/img/teras.jpeg')] bg-cover bg-center min-h-screen text-white flex items-center justify-center px-4 pt-16"
+      class="relative bg-[url('Assets/img/gedung3.jpeg')] bg-cover bg-center min-h-screen text-white flex items-center justify-center px-4 pt-16"
     >
       <div
         class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"
@@ -146,9 +128,6 @@
       </div>
     </section>
 
-    <!-- ========================================= -->
-    <!-- TENTANG SECTION                           -->
-    <!-- ========================================= -->
     <section id="tentang" class="py-16 md:py-24 bg-gray-50">
       <div class="container mx-auto px-6">
         <div class="text-center mb-12">
@@ -226,9 +205,6 @@
       </div>
     </section>
 
-    <!-- ========================================= -->
-    <!-- PROGRAM SECTION                           -->
-    <!-- ========================================= -->
     <section
       id="program"
       class="py-16 md:py-24 bg-gray-50 relative overflow-hidden"
@@ -344,159 +320,6 @@
       </div>
     </section>
 
-    <!-- ========================================= -->
-    <!-- PRESTASI SECTION                          -->
-    <!-- ========================================= -->
-    <section id="prestasi" class="py-16 md:py-24 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h1 class="text-3xl md:text-4xl font-bold text-[#27AE60] mb-4">
-            Prestasi <span class="text-gray-800">Siswa</span>
-          </h1>
-          <p class="text-gray-500 max-w-2xl mx-auto">
-            Alhamdulillah, santri MTs An Nashr terus mengukir prestasi membanggakan di berbagai bidang kompetisi.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <div class="prestasi-card group relative h-80 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
-            <img src="Assets/img/foto 1.jpeg" alt="Prestasi 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-            <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold text-white bg-[#27AE60] rounded-full">Akademik</span>
-              <h3 class="text-xl font-bold text-white mb-1">Juara 1 Olimpiade Matematika</h3>
-              <p class="text-gray-300 text-sm">Tingkat Kabupaten Bogor 2024</p>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="prestasi-card group relative h-80 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
-            <img src="Assets/img/foto 1.jpeg" alt="Prestasi 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-            <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold text-white bg-yellow-500 rounded-full">Tahfizh</span>
-              <h3 class="text-xl font-bold text-white mb-1">Wisuda Tahfizh 5 Juz</h3>
-              <p class="text-gray-300 text-sm">Angkatan ke-3 Tahun 2024</p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="prestasi-card group relative h-80 rounded-2xl overflow-hidden shadow-lg cursor-pointer">
-            <img src="Assets/img/foto 1.jpeg" alt="Prestasi 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-            <div class="absolute bottom-0 left-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <span class="inline-block px-3 py-1 mb-2 text-xs font-semibold text-white bg-blue-500 rounded-full">Bahasa</span>
-              <h3 class="text-xl font-bold text-white mb-1">Juara 2 Pidato Bahasa Arab</h3>
-              <p class="text-gray-300 text-sm">Porseni Madrasah 2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================= -->
-    <!-- BERITA SECTION                            -->
-    <!-- ========================================= -->
-    <section id="berita" class="py-16 md:py-24 bg-gray-50">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h1 class="text-3xl md:text-4xl font-bold text-[#27AE60] mb-4">
-            Berita & <span class="text-gray-800">Kegiatan</span>
-          </h1>
-          <p class="text-gray-500 max-w-2xl mx-auto">
-            Ikuti perkembangan terbaru dan dokumentasi kegiatan santri MTs An Nashr.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- News Item 1 -->
-          <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
-            <div class="relative h-48 overflow-hidden">
-              <img src="Assets/img/foto 1.jpeg" alt="Kegiatan 1" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-              <div class="absolute top-4 left-4 bg-[#27AE60] text-white text-xs font-bold px-3 py-1 rounded-full">
-                Kegiatan
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center text-gray-400 text-sm mb-3">
-                <ion-icon name="calendar-outline" class="mr-2"></ion-icon>
-                <span>12 Agustus 2024</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#27AE60] transition">
-                Peringatan Hari Kemerdekaan RI ke-79
-              </h3>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Semangat kemerdekaan mewarnai berbagai perlombaan yang diadakan di lingkungan sekolah, memupuk rasa nasionalisme santri.
-              </p>
-              <a href="https://radarkini.com/index.php/2026/01/09/mahasiswa-teknik-informatika-universitas-pamulang-kenalkan-hardware-software-kepada-siswa-madrasah-tahfizh-an-nashr-parung/" class="inline-flex items-center text-[#27AE60] font-semibold hover:underline">
-                Baca Selengkapnya <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
-              </a>
-            </div>
-          </div>
-
-          <!-- News Item 2 -->
-          <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
-            <div class="relative h-48 overflow-hidden">
-              <img src="Assets/img/masjid2.jpg" alt="Kegiatan 2" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-              <div class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                Keagamaan
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center text-gray-400 text-sm mb-3">
-                <ion-icon name="calendar-outline" class="mr-2"></ion-icon>
-                <span>05 Juli 2024</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#27AE60] transition">
-                Kajian Rutin Bulanan Wali Murid
-              </h3>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Mempererat silaturahmi antara sekolah dan orang tua melalui majelis ilmu yang dilaksanakan di Masjid Al-Kautsar.
-              </p>
-              <a href="#" class="inline-flex items-center text-[#27AE60] font-semibold hover:underline">
-                Baca Selengkapnya <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
-              </a>
-            </div>
-          </div>
-
-          <!-- News Item 3 -->
-          <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 group">
-            <div class="relative h-48 overflow-hidden">
-              <img src="Assets/img/ruangkelas.jpeg" alt="Kegiatan 3" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-              <div class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                Akademik
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center text-gray-400 text-sm mb-3">
-                <ion-icon name="calendar-outline" class="mr-2"></ion-icon>
-                <span>20 Juni 2024</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#27AE60] transition">
-                Ujian Kenaikan Kelas Berbasis Komputer
-              </h3>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                Pelaksanaan ujian akhir semester berjalan lancar dengan memanfaatkan fasilitas laboratorium komputer yang memadai.
-              </p>
-              <a href="#" class="inline-flex items-center text-[#27AE60] font-semibold hover:underline">
-                Baca Selengkapnya <ion-icon name="arrow-forward-outline" class="ml-1"></ion-icon>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="text-center mt-10">
-            <a href="#" class="inline-block px-6 py-3 border-2 border-[#27AE60] text-[#27AE60] font-bold rounded-full hover:bg-[#27AE60] hover:text-white transition duration-300">
-                Lihat Semua Berita
-            </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================= -->
-    <!-- FASILITAS SECTION                         -->
-    <!-- ========================================= -->
     <section
       id="fasilitas"
       class="py-16 bg-gray-50 overflow-hidden h-[100vh] grid place-items-center relative w-full shadow-[0_3px_10px_rgba(0,0,0,0.3)]"
@@ -561,9 +384,6 @@
       </nav>
     </section>
 
-    <!-- ========================================= -->
-    <!-- TESTIMONI SECTION                         -->
-    <!-- ========================================= -->
     <section id="testimoni" class="py-16 md:py-24">
       <div class="container mx-auto text-center px-6">
         <h2 class="text-3xl md:text-4xl font-bold text-[#27AE60] mb-12">
@@ -612,9 +432,6 @@
       </div>
     </section>
 
-    <!-- ========================================= -->
-    <!-- FOOTER SECTION                            -->
-    <!-- ========================================= -->
     <footer class="bg-gray-900 text-white py-10">
       <div class="container mx-auto px-6 text-center">
         <div class="image w-full flex justify-center mb-2">
