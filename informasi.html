@@ -6,380 +6,340 @@
     <title>Informasi & Kegiatan - MTs An-Nashr</title>
     <link rel="icon" href="Assets/img/logo2.png" />
     
-    <!-- TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- ANIMATE.CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <!-- IONICONS -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+      /* Smooth transition untuk navbar */
+      #navbar.scrolled {
+        background-color: rgba(39, 174, 96, 0.95);
+        backdrop-filter: blur(8px);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+    </style>
   </head>
 
   <body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
 
-    <!-- NAVBAR -->
-    <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-all duration-300">
-      <nav class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
-        <a href="index.html" class="flex h-full gap-3 md:text-2xl font-bold text-white tracking-wide z-50">
-          <img src="Assets/img/logo2.png" alt="Logo MTs" width="35px" />
-          <div class="h-full flex items-center">
-            <h1 class="text-center pt-1 md:pt-0">MTs An Nashr</h1>
-          </div>
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-4">
+      <nav class="container mx-auto flex justify-between items-center px-4 sm:px-8">
+        <a href="index.html" class="flex items-center gap-3 font-bold text-white tracking-wide z-50">
+          <img src="Assets/img/logo2.png" alt="Logo MTs" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
+          <span class="text-lg md:text-2xl">MTs An Nashr</span>
         </a>
 
-        <button id="menuBtn" class="md:hidden text-white text-3xl z-50 focus:outline-none">
+        <button id="menuBtn" class="md:hidden text-white text-3xl z-50 focus:outline-none flex items-center">
           <ion-icon name="menu-outline"></ion-icon>
         </button>
 
-        <div id="menu" class="fixed inset-0 z-40 flex flex-col items-start space-y-8 p-[3rem] bg-[#27AE60]/95 transform translate-x-full transition-transform duration-300 md:ps-[3rem] md:pt-0 md:pb-0 md:pe-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end">
-          <a href="index.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
-          <!-- MENU AKTIF (Informasi) -->
-          <a href="#" onclick="closeMenu()" class="font-bold text-yellow-300 transition drop-shadow-md border-b-2 border-yellow-300">Informasi</a>
-          <a href="berita.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Berita</a>
+        <div id="menu" class="fixed inset-0 z-40 flex flex-col items-center justify-center space-y-8 bg-[#27AE60] transform translate-x-full transition-transform duration-300 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:inset-auto md:p-0">
+          <a href="index.html" onclick="closeMenu()" class="text-xl md:text-base font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
+          <a href="#" onclick="closeMenu()" class="text-xl md:text-base font-bold text-yellow-300 transition drop-shadow-md border-b-2 border-yellow-300">Informasi</a>
+          <a href="berita.html" onclick="closeMenu()" class="text-xl md:text-base font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Berita</a>
         </div>
       </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative bg-[url('Assets/img/bgfix.jpeg')] bg-cover bg-center h-[50vh] flex items-center justify-center text-white">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
-      <div class="relative z-10 text-center px-4 animate__animated animate__fadeInDown">
-        <span class="bg-[#27AE60] text-white px-3 py-1 rounded-full text-sm font-bold mb-4 inline-block">Tahun Ajaran 2026/2027</span>
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Penerimaan Peserta Didik Baru</h1>
-        <p class="text-lg text-gray-200 max-w-2xl mx-auto">Bergabunglah bersama kami membentuk generasi Qurani, Cerdas, dan Berakhlak Mulia.</p>
+    <section class="relative bg-[url('Assets/img/bgfix.jpeg')] bg-cover bg-center h-[60vh] md:h-[50vh] flex items-center justify-center text-white">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 text-center px-6 animate__animated animate__fadeInDown">
+        <span class="bg-[#27AE60] text-white px-4 py-1 rounded-full text-xs md:text-sm font-bold mb-4 inline-block">Tahun Ajaran 2026/2027</span>
+        <h1 class="text-3xl md:text-6xl font-extrabold mb-4 leading-tight">Penerimaan Peserta Didik Baru</h1>
+        <p class="text-base md:text-lg text-gray-200 max-w-2xl mx-auto">Bergabunglah bersama kami membentuk generasi Qurani, Cerdas, dan Berakhlak Mulia.</p>
       </div>
     </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-grow py-16 px-4 sm:px-6">
-      <div class="container mx-auto max-w-5xl">
+    <main class="flex-grow py-12 md:py-16 px-4">
+      <div class="container mx-auto max-w-6xl">
         
-        <!-- BROSUR SECTION (GRID LAYOUT) -->
-        <div class="mb-16 animate__animated animate__fadeInUp">
-          <h2 class="text-3xl font-bold text-[#27AE60] mb-8 text-center">Informasi & Pengumuman PPDB</h2>
-          
-          <!-- GRID CONTAINER: Otomatis menyesuaikan jumlah foto -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- FOTO 1 -->
-            <div class="bg-white p-2 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-              <img src="Assets/img/brosur.jpeg" onerror="this.src='https://placehold.co/600x800/png?text=Brosur+Belum+Diupload'" alt="Brosur 1" class="w-full h-auto rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this)">
+        <div class="mb-20 animate__animated animate__fadeInUp">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#27AE60] mb-8 text-center">Informasi PPDB</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="group bg-white p-3 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl transition duration-300">
+              <div class="overflow-hidden rounded-xl">
+                <img src="Assets/img/brosur.jpeg" onerror="this.src='https://placehold.co/600x800/png?text=Brosur+Belum+Diupload'" alt="Brosur 1" class="w-full h-auto cursor-pointer group-hover:scale-105 transition duration-500" onclick="openLightbox(this)">
+              </div>
             </div>
-
-            <!-- FOTO 2 -->
-            <div class="bg-white p-2 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-              <img src="Assets/img/brosur2.jpeg" onerror="this.src='https://placehold.co/600x800/png?text=Brosur+Belum+Diupload'" alt="Brosur 2" class="w-full h-auto rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this)">
+            <div class="group bg-white p-3 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl transition duration-300">
+              <div class="overflow-hidden rounded-xl">
+                <img src="Assets/img/brosur2.jpeg" onerror="this.src='https://placehold.co/600x800/png?text=Brosur+Belum+Diupload'" alt="Brosur 2" class="w-full h-auto cursor-pointer group-hover:scale-105 transition duration-500" onclick="openLightbox(this)">
+              </div>
             </div>
-
-            <!-- FOTO 3 -->
-            <div class="bg-white p-2 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-              <img src="Assets/img/seragam.jpeg" onerror="this.src='https://placehold.co/600x800/png?text=Brosur+Belum+Diupload'" alt="Brosur 3" class="w-full h-auto rounded-xl cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this)">
+            <div class="group bg-white p-3 rounded-2xl shadow-md border border-gray-100 hover:shadow-2xl transition duration-300">
+              <div class="overflow-hidden rounded-xl">
+                <img src="Assets/img/seragam.jpeg" onerror="this.src='https://placehold.co/600x800/png?text=Brosur+Belum+Diupload'" alt="Seragam" class="w-full h-auto cursor-pointer group-hover:scale-105 transition duration-500" onclick="openLightbox(this)">
+              </div>
             </div>
-
           </div>
         </div>
 
-        <!-- INFO GELOMBANG -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-20">
+          <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-l-8 border-[#27AE60]">
+            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 uppercase tracking-wide">Tahap 1</h3>
+            <ul class="space-y-4 text-gray-600">
+              <li class="flex items-start gap-3">
+                <ion-icon name="calendar-outline" class="text-[#27AE60] text-xl"></ion-icon>
+                <div><strong>Pendaftaran:</strong><br>Mulai 18 Januari 2026</div>
+              </li>
+              <li class="flex items-start gap-3">
+                <ion-icon name="location-outline" class="text-[#27AE60] text-xl"></ion-icon>
+                <div><strong>Lokasi:</strong><br>Gedung MTs An Nashr</div>
+              </li>
+              <li class="flex items-center gap-3">
+                <ion-icon name="checkmark-circle-outline" class="text-[#27AE60] text-xl"></ion-icon>
+                <span class="text-green-600 font-bold bg-green-100 px-3 py-1 rounded-full text-sm">DIBUKA</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border-l-8 border-yellow-400">
+            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 uppercase tracking-wide">Tahap 2</h3>
+            <ul class="space-y-4 text-gray-600">
+              <li class="flex items-start gap-3">
+                <ion-icon name="calendar-outline" class="text-yellow-500 text-xl"></ion-icon>
+                <div><strong>Pendaftaran:</strong><br>Februari – Juni 2026</div>
+              </li>
+              <li class="flex items-start gap-3">
+                <ion-icon name="alert-circle-outline" class="text-yellow-500 text-xl"></ion-icon>
+                <div class="text-sm italic text-gray-400">Catatan: Ditutup jika kuota terpenuhi di Tahap 1</div>
+              </li>
+              <li class="flex items-center gap-3">
+                <ion-icon name="time-outline" class="text-yellow-500 text-xl"></ion-icon>
+                <span class="text-yellow-700 font-bold bg-yellow-100 px-3 py-1 rounded-full text-sm">SEGERA</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          <div class="lg:col-span-1 bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-100">
+            <h3 class="text-xl font-bold text-[#27AE60] mb-6 flex items-center gap-2">
+              <ion-icon name="document-text-outline"></ion-icon> Syarat Berkas
+            </h3>
+            <ul class="space-y-4 text-sm md:text-base text-gray-600">
+              <li class="flex items-center gap-3"><ion-icon name="chevron-forward" class="text-[#27AE60]"></ion-icon> Infak Formulir Rp 100.000</li>
+              <li class="flex items-center gap-3"><ion-icon name="chevron-forward" class="text-[#27AE60]"></ion-icon> Fotokopi KTP Orang Tua</li>
+              <li class="flex items-center gap-3"><ion-icon name="chevron-forward" class="text-[#27AE60]"></ion-icon> Fotokopi Kartu Keluarga</li>
+              <li class="flex items-center gap-3"><ion-icon name="chevron-forward" class="text-[#27AE60]"></ion-icon> Fotokopi Akta Kelahiran</li>
+              <li class="flex items-center gap-3"><ion-icon name="chevron-forward" class="text-[#27AE60]"></ion-icon> Fotokopi Ijazah SD (Menyusul)</li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-2 bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-100">
+            <h3 class="text-xl font-bold text-[#27AE60] mb-8 flex items-center gap-2">
+              <ion-icon name="git-network-outline"></ion-icon> Alur Pendaftaran Offline
+            </h3>
+            <div class="space-y-8 relative">
+              <div class="absolute left-5 top-0 h-full w-0.5 bg-gray-100 hidden md:block"></div>
+
+              <div class="flex items-start gap-4 md:gap-10 relative">
+                <div class="w-10 h-10 rounded-full bg-[#27AE60] text-white flex items-center justify-center shrink-0 z-10 font-bold shadow-lg shadow-green-200">1</div>
+                <div>
+                  <h4 class="font-bold text-gray-900 mb-1">Pendaftaran & Berkas</h4>
+                  <p class="text-gray-500 text-sm md:text-base">Mengisi formulir dan menyerahkan berkas di Ruang PPDB.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 md:gap-10 relative">
+                <div class="w-10 h-10 rounded-full bg-[#27AE60] text-white flex items-center justify-center shrink-0 z-10 font-bold shadow-lg shadow-green-200">2</div>
+                <div>
+                  <h4 class="font-bold text-gray-900 mb-1">Pengumuman Hasil</h4>
+                  <p class="text-gray-500 text-sm md:text-base">Hasil seleksi dapat dilihat melalui website atau papan informasi.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4 md:gap-10 relative">
+                <div class="w-10 h-10 rounded-full bg-[#27AE60] text-white flex items-center justify-center shrink-0 z-10 font-bold shadow-lg shadow-green-200">3</div>
+                <div>
+                  <h4 class="font-bold text-gray-900 mb-1">Daftar Ulang</h4>
+                  <p class="text-gray-500 text-sm md:text-base">Penyelesaian administrasi dan pengambilan perlengkapan siswa baru.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="mb-20">
+          <div class="bg-white rounded-3xl shadow-xl p-6 md:p-12 border border-gray-50 overflow-hidden">
+            <div class="text-center mb-10">
+              <h2 class="text-2xl md:text-4xl font-extrabold text-gray-800 mb-2">Biaya Daftar Masuk</h2>
+              <p class="text-[#27AE60] font-medium">Tahun Pendidikan 2026 – 2027</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-gradient-to-br from-[#27AE60] to-[#1e8549] text-white rounded-2xl p-6 md:p-10 text-center mb-10 shadow-xl relative">
+              <p class="text-sm md:text-lg opacity-90 mb-2 uppercase tracking-widest">Total Biaya All-In</p>
+              <h3 class="text-3xl md:text-5xl font-black italic">Rp 2.950.000</h3>
+              <div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+              <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <h4 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                  <ion-icon name="checkmark-done-circle" class="text-[#27AE60] text-2xl"></ion-icon>
+                  Fasilitas Seragam & Atribut
+                </h4>
+                <div class="grid grid-cols-1 gap-3 text-sm md:text-base text-gray-700">
+                  <div class="flex items-center gap-3"><ion-icon name="shirt" class="text-[#27AE60]"></ion-icon> Jas Almamater</div>
+                  <div class="flex items-center gap-3"><ion-icon name="shirt" class="text-[#27AE60]"></ion-icon> Seragam Biru Putih</div>
+                  <div class="flex items-center gap-3"><ion-icon name="shirt" class="text-[#27AE60]"></ion-icon> Seragam Batik & Olahraga</div>
+                  <div class="flex items-center gap-3"><ion-icon name="shirt" class="text-[#27AE60]"></ion-icon> Seragam Pramuka Lengkap</div>
+                </div>
+              </div>
+
+              <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                <h4 class="font-bold text-blue-800 mb-4 flex items-center gap-2">
+                  <ion-icon name="information-circle" class="text-blue-600 text-2xl"></ion-icon>
+                  Informasi Penting
+                </h4>
+                <ul class="space-y-3 text-sm text-blue-900/80 leading-relaxed">
+                  <li class="flex gap-2"><span>•</span> Biaya dibayarkan saat tahap daftar ulang.</li>
+                  <li class="flex gap-2"><span>•</span> Tidak ada biaya tambahan uang gedung di tengah semester.</li>
+                  <li class="flex gap-2"><span>•</span> Pembayaran resmi hanya dilakukan di kantor sekolah.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
+              <a href="https://docs.google.com/forms/..." target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all active:scale-95">
+                <ion-icon name="document-text" class="text-xl"></ion-icon>
+                Formulir Online
+              </a>
+              <a href="https://wa.me/6287874814766" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#27AE60] hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all active:scale-95">
+                <ion-icon name="logo-whatsapp" class="text-xl"></ion-icon>
+                Hubungi Panitia
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-20 animate__animated animate__fadeInUp">
+  <h2 class="text-2xl md:text-3xl font-bold text-[#27AE60] mb-8 text-center uppercase tracking-wider">Papan Pengumuman</h2>
   
-  <!-- TAHAP 1 -->
-  <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-[#27AE60]">
-    <h3 class="text-2xl font-bold text-gray-800 mb-4">Tahap 1</h3>
-    <ul class="space-y-3 text-gray-600">
-      <li class="flex items-center gap-2">
-        <ion-icon name="calendar-outline" class="text-[#27AE60]"></ion-icon>
-        <strong>Pendaftaran:</strong> 18 Januari 2026
-      </li>
-      <li class="flex items-center gap-2">
-        <ion-icon name="location-outline" class="text-[#27AE60]"></ion-icon>
-        <strong>Lokasi:</strong> Ruang Informasi PPDB
-      </li>
-      <li class="flex items-center gap-2">
-        <ion-icon name="time-outline" class="text-[#27AE60]"></ion-icon>
-        <strong>Waktu:</strong> Senin – Jum'at, 08.00 – 11.30 WIB
-      </li>
-      <li class="flex items-center gap-2">
-        <ion-icon name="checkmark-circle-outline" class="text-[#27AE60]"></ion-icon>
-        <strong>Status:</strong>
-        <span class="text-green-600 font-bold bg-green-100 px-2 rounded">DIBUKA</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- TAHAP 2 -->
-  <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-yellow-400">
-    <h3 class="text-2xl font-bold text-gray-800 mb-4">Tahap 2</h3>
-    <ul class="space-y-3 text-gray-600">
-      <li class="flex items-center gap-2">
-        <ion-icon name="calendar-outline" class="text-yellow-500"></ion-icon>
-        <strong>Pendaftaran:</strong> Februari – Juni 2026
-      </li>
-      <li class="flex items-center gap-2">
-        <ion-icon name="alert-circle-outline" class="text-yellow-500"></ion-icon>
-        <strong>Catatan:</strong> Ditutup jika kuota terpenuhi di Tahap 1
-      </li>
-      <li class="flex items-center gap-2">
-        <ion-icon name="time-outline" class="text-yellow-500"></ion-icon>
-        <strong>Status:</strong> Segera Dibuka
-      </li>
-    </ul>
-  </div>
-<!-- SYARAT & ALUR -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-  <!-- SYARAT -->
-  <div class="lg:col-span-1 bg-white p-6 rounded-2xl shadow-md h-fit">
-    <h3 class="text-xl font-bold text-[#27AE60] mb-4 flex items-center gap-2">
-      <ion-icon name="document-text-outline"></ion-icon> Syarat Pendaftaran
-    </h3>
-    <ul class="space-y-2 text-sm text-gray-600 list-disc pl-5">
-      <li>Infak Formulir Pendaftaran Rp. 100.000</li>
-      <li>Fotokopi KTP Orang Tua</li>
-      <li>Fotokopi Kartu Keluarga</li>
-      <li>Fotokopi Akta Kelahiran</li>
-      <li>Fotokopi Ijazah SD/MI (Menyusul)</li>
-    </ul>
-  </div>
-
-    <!-- ALUR -->
-  <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-md">
-    <h3 class="text-xl font-bold text-[#27AE60] mb-6 flex items-center gap-2">
-      <ion-icon name="git-network-outline"></ion-icon> Alur Pendaftaran
-    </h3>
-
-    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
-
-      <!-- Step 1 -->
-      <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#27AE60] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-          1
-        </div>
-        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-gray-50 p-4 rounded border border-slate-200 shadow">
-          <div class="font-bold text-gray-900">Pendaftaran</div>
-          <div class="text-gray-500 text-sm">
-            Mengisi formulir pendaftaran dan melengkapi berkas persyaratan di Ruang PPDB.
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#27AE60] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-          2
-        </div>
-        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-gray-50 p-4 rounded border border-slate-200 shadow">
-          <div class="font-bold text-gray-900">Pengumuman</div>
-          <div class="text-gray-500 text-sm">
-            Menunggu hasil seleksi yang akan diumumkan melalui website resmi dan papan pengumuman sekolah.
-          </div>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-[#27AE60] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-          3
-        </div>
-        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-gray-50 p-4 rounded border border-slate-200 shadow">
-          <div class="font-bold text-gray-900">Daftar Ulang</div>
-          <div class="text-gray-500 text-sm">
-            Pembayaran biaya masuk dan pengambilan perlengkapan sekolah.
-          </div>
-        </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr justify-center">
+    
+    <div class="bg-white p-3 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 group">
+      <div class="overflow-hidden rounded-xl h-full">
+        <img src="Assets/img/brosur.jpe" 
+             onerror="this.src='https://placehold.co/600x800/png?text=.'" 
+             alt="Pengumuman" 
+             class="w-full h-full object-contain cursor-pointer group-hover:scale-105 transition duration-500" 
+             onclick="openLightbox(this)">
       </div>
     </div>
-  </div>
-</div>
 
-
-<!-- BIAYA DAFTAR MASUK -->
-<section class="mb-20">
-  <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-lg p-8 md:p-12 relative overflow-hidden">
-
-    <!-- Header -->
-    <div class="mb-10 text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-3">
-        Biaya Daftar Masuk
-      </h2>
-      <p class="text-gray-500">
-        Tahun Pendidikan 2026 – 2027
-      </p>
-    </div>
-
-    <!-- Nominal -->
-    <div class="bg-gradient-to-r from-[#27AE60] to-[#2ECC71] text-white rounded-2xl p-8 text-center mb-10 shadow-lg">
-      <p class="text-lg tracking-wide mb-2">Total Biaya</p>
-      <h3 class="text-4xl md:text-5xl font-extrabold">
-        Rp 2.950.000
-      </h3>
-    </div>
-
-    <!-- Rincian -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      <!-- Sudah Termasuk -->
-      <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
-        <h4 class="text-xl font-bold text-[#27AE60] mb-4 flex items-center gap-2">
-          <ion-icon name="checkmark-done-outline"></ion-icon>
-          Biaya Sudah Termasuk
-        </h4>
-        <ul class="space-y-3 text-gray-700">
-          <li class="flex items-center gap-3">
-            <ion-icon name="shirt-outline" class="text-[#27AE60]"></ion-icon>
-            Jas Almamater
-          </li>
-          <li class="flex items-center gap-3">
-            <ion-icon name="shirt-outline" class="text-[#27AE60]"></ion-icon>
-            Seragam Biru Putih
-          </li>
-          <li class="flex items-center gap-3">
-            <ion-icon name="shirt-outline" class="text-[#27AE60]"></ion-icon>
-            Seragam Batik
-          </li>
-          <li class="flex items-center gap-3">
-            <ion-icon name="shirt-outline" class="text-[#27AE60]"></ion-icon>
-            Seragam Olahraga
-          </li>
-          <li class="flex items-center gap-3">
-            <ion-icon name="shirt-outline" class="text-[#27AE60]"></ion-icon>
-            Seragam Pramuka
-          </li>
-        </ul>
+    <div class="bg-white p-3 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition duration-300 group">
+      <div class="overflow-hidden rounded-xl h-full">
+        <img src="Assets/img/brosur2.jpe" 
+             onerror="this.src='https://placehold.co/600x800/png?text=.'" 
+             alt="Pengumuman" 
+             class="w-full h-full object-contain cursor-pointer group-hover:scale-105 transition duration-500" 
+             onclick="openLightbox(this)">
       </div>
-
-      <!-- Catatan -->
-      <div class="bg-[#F0FDF4] p-6 rounded-2xl border border-[#27AE60]/30">
-        <h4 class="text-xl font-bold text-[#27AE60] mb-4 flex items-center gap-2">
-          <ion-icon name="information-circle-outline"></ion-icon>
-          Catatan Penting
-        </h4>
-        <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
-          <li>• Biaya dibayarkan saat <strong>daftar ulang</strong>.</li>
-          <li>• Biaya dapat berubah sesuai kebijakan sekolah.</li>
-          <li>• Pembayaran dilakukan langsung di sekolah.</li>
-        </ul>
-      </div>
-
-      <!-- CTA BUTTON -->
-        <div class="mt-16 text-center">
-          <h2 class="text-2xl font-bold mb-6">Siap Mendaftar?</h2>
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDjlx3cBrbDC6El3L44w4VLP84tihYwl4SEsUHogx0RnVglw/viewform" target="_blank" class="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full shadow-xl transition transform hover:scale-105 text-lg">
-              <ion-icon name="document-text-outline" class="text-2xl"></ion-icon>
-              Isi Formulir Pendaftaran
-            </a>
-            <a href="https://wa.me/6287874814766?text=Assalamualaikum,%20saya%20ingin%20mendaftar%20PPDB" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#27AE60] hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full shadow-xl transition transform hover:scale-105 text-lg">
-              <ion-icon name="logo-whatsapp" class="text-2xl"></ion-icon>
-              Hubungi Panitia via WhatsApp
-            </a>
-          </div>
-        </div>
-
     </div>
 
-  </div>
+    </div>
 </section>
 
-
-</div>
-
-
-        <!-- KEGIATAN SEKOLAH -->
-        <div class="mb-16 animate__animated animate__fadeInUp">
-          <h2 class="text-3xl font-bold text-[#27AE60] mb-8 text-center">Galeri Kegiatan</h2>
-          
-          <!-- GRID CONTAINER: Tambahkan foto baru di dalam sini -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-            <!-- FOTO 1 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 1" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+        <div class="mb-16">
+          <h2 class="text-2xl md:text-3xl font-bold text-[#27AE60] mb-8 text-center uppercase tracking-wider">Galeri Kegiatan</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+            <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
             </div>
-
-            <!-- FOTO 2 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan2.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 2" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan2.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
             </div>
-
-            <!-- FOTO 3 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan3.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 3" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan3.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
             </div>
-
-            <!-- FOTO 4 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan4.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 4" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan4.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
             </div>
-
-
-            <!-- FOTO 6 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan6.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 6" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
             </div>
-
-            <!-- FOTO 7 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan7.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 6" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
-            </div>
-
-            <!-- FOTO 8 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan8.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 6" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
-            </div>
-
-            <!-- FOTO 9 -->
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img src="Assets/img/kegiatan9.jpeg" onerror="this.src='https://placehold.co/600x400/png?text=Foto+Kegiatan'" alt="Kegiatan 6" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
-            </div>
-
-          </div>
         </div>
 
-        
 
       </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-10">
-      <div class="container mx-auto px-6 text-center">
-        <div class="image w-full flex justify-center mb-2">
-          <img src="Assets/img/logo2.png" alt="" width="50px" />
-        </div>
-
-        <h2 class="text-2xl font-bold mb-4">MTs An Nashr</h2>
-
-        <div class="flex flex-col justify-center space-x-6 mb-8">
-          <div class="sosmed flex justify-center space-x-6 mb-2">
-            <a href="https://www.instagram.com/mts.annashrparung/#" class="text-gray-400 hover:text-[#27AE60] text-2xl transition"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://web.facebook.com/profile.php?id=100087312590437" class="text-gray-400 hover:text-[#27AE60] text-2xl transition"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://www.youtube.com/@AnnashrParung" class="text-gray-400 hover:text-[#27AE60] text-2xl transition"><ion-icon name="logo-youtube"></ion-icon></a>
-          </div>
-
-          <p class="text-gray-500 text-sm">
-            Jl. Balai Desa, Gg. Bambu Kuning, 02/03, Jabon Mekar, Kec. Parung, Kab. Bogor
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center text-center mb-12">
+          <img src="Assets/img/logo2.png" alt="Logo" class="w-16 h-16 mb-4" />
+          <h2 class="text-2xl font-black tracking-tighter mb-2">MTs AN NASHR</h2>
+          <p class="text-gray-400 max-w-md text-sm leading-relaxed">
+            Membentuk pribadi unggul yang berpegang teguh pada nilai-nilai keislaman dan kemajuan IPTEK.
           </p>
+          <div class="flex gap-5 mt-8">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#27AE60] transition-colors"><ion-icon name="logo-instagram" class="text-xl"></ion-icon></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#27AE60] transition-colors"><ion-icon name="logo-facebook" class="text-xl"></ion-icon></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#27AE60] transition-colors"><ion-icon name="logo-youtube" class="text-xl"></ion-icon></a>
+          </div>
         </div>
-        <div class="border-t border-gray-800 pt-6">
-          <p class="text-gray-500 text-sm">
-            &copy; 2026 MTs An Nashr. All rights reserved.
+        
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <p class="text-gray-500 text-xs md:text-sm">
+            Jl. Balai Desa, Gg. Bambu Kuning, Jabon Mekar, Parung, Bogor.<br>
+            &copy; 2026 MTs An Nashr. Built with Heart.
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- LIGHTBOX (POPUP GAMBAR) -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300" onclick="closeLightbox()">
-      <img id="lightbox-img" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transform transition-transform duration-300 scale-90" onclick="event.stopPropagation()" />
-      <button class="absolute top-4 right-4 text-white text-5xl font-bold focus:outline-none hover:text-gray-300 transition">&times;</button>
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300" onclick="closeLightbox()">
+      <button class="absolute top-6 right-6 text-white text-4xl hover:text-red-500 transition-colors z-[110]">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </button>
+      <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain rounded shadow-2xl transition-transform duration-300 scale-95" onclick="event.stopPropagation()" />
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <script>
+      const navbar = document.getElementById('navbar');
+      window.onscroll = () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+          navbar.classList.remove('py-4');
+        } else {
+          navbar.classList.remove('scrolled');
+          navbar.classList.add('py-4');
+        }
+      };
 
+      const menu = document.getElementById('menu');
+      const menuBtn = document.getElementById('menuBtn');
+
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('translate-x-full');
+      });
+
+      function closeMenu() {
+        menu.classList.add('translate-x-full');
+      }
+
+      function openLightbox(img) {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        lbImg.src = img.src;
+        lb.classList.remove('hidden');
+        lb.classList.add('flex');
+        setTimeout(() => lbImg.classList.remove('scale-95'), 10);
+      }
+
+      function closeLightbox() {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        lbImg.classList.add('scale-95');
+        setTimeout(() => {
+          lb.classList.add('hidden');
+          lb.classList.remove('flex');
+        }, 200);
+      }
+    </script>
+  </body>
 </html>
