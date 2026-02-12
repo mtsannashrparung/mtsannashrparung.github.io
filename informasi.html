@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth overflow-x-hidden">
+<html lang="id" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,26 +29,32 @@
 
   <body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
 
-    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-4">
-      <nav class="container mx-auto flex justify-between items-center px-4 sm:px-8">
-        <a href="index.html" class="flex items-center gap-3 font-bold text-white tracking-wide z-50">
-          <img src="Assets/img/logo2.png" alt="Logo MTs" class="w-8 h-8 md:w-10 md:h-10 object-contain" />
-          <span class="text-lg md:text-2xl">MTs An Nashr</span>
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-all duration-300 py-4">
+      <nav class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+        <a href="../index.html" class="flex h-full gap-3 md:text-2xl font-bold text-white tracking-wide z-50">
+          <img src="Assets/img/logo2.png" alt="Logo MTs" width="35px" />
+          <div class="h-full flex items-center">
+            <h1 class="text-center pt-1 md:pt-0 drop-shadow-lg">MTs An Nashr</h1>
+          </div>
         </a>
 
-        <button id="menuBtn" class="md:hidden text-white text-3xl z-50 focus:outline-none flex items-center">
+        <button id="menuBtn" class="md:hidden text-white text-3xl z-50 focus:outline-none">
           <ion-icon name="menu-outline"></ion-icon>
         </button>
 
-        <div id="menu" class="fixed inset-0 z-40 flex flex-col items-center justify-center space-y-8 bg-[#27AE60] transform translate-x-full transition-transform duration-300 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:inset-auto md:p-0">
-          <a href="index.html" onclick="closeMenu()" class="text-xl md:text-base font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
-          <a href="#" onclick="closeMenu()" class="text-xl md:text-base font-bold text-yellow-300 transition drop-shadow-md border-b-2 border-yellow-300">Informasi</a>
-          <a href="berita.html" onclick="closeMenu()" class="text-xl md:text-base font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Berita</a>
+        <div id="menu" class="fixed inset-0 z-40 flex flex-col items-start space-y-8 p-[3rem] bg-[#27AE60] transform translate-x-[40%] transition-transform duration-300 md:ps-[3rem] md:pt-0 md:pb-0 md:pe-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end">
+          <a href="../index.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
+          <a href="profil.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Profil</a>
+          <a href="profil.html#tentang" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Tentang</a>
+          <a href="profil.html#program" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Program</a>
+          <a href="profil.html#fasilitas" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Fasilitas</a>
+          <a href="#" onclick="closeMenu()" class="font-bold text-yellow-300 transition drop-shadow-md border-b-2 border-yellow-300">Informasi</a>
+          <a href="berita.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Berita</a>
         </div>
       </nav>
     </header>
 
-    <section class="relative bg-[url('Assets/img/bgfix.jpeg')] bg-cover bg-center h-[60vh] md:h-[50vh] flex items-center justify-center text-white">
+    <section class="relative bg-[url('Assets/img/kegiatan.jpeg')] bg-cover bg-center h-[35vh] md:h-[50vh] flex items-center justify-center text-white">
       <div class="absolute inset-0 bg-black/60"></div>
       <div class="relative z-10 text-center px-6 animate__animated animate__fadeInDown">
         <span class="bg-[#27AE60] text-white px-4 py-1 rounded-full text-xs md:text-sm font-bold mb-4 inline-block">Tahun Ajaran 2026/2027</span>
@@ -199,6 +205,7 @@
                 </h4>
                 <ul class="space-y-3 text-sm text-blue-900/80 leading-relaxed">
                   <li class="flex gap-2"><span>•</span> Biaya dibayarkan saat tahap daftar ulang.</li>
+                  <li class="flex gap-2"><span>•</span> Tidak ada biaya tambahan uang gedung di tengah semester.</li>
                   <li class="flex gap-2"><span>•</span> Pembayaran resmi hanya dilakukan di kantor sekolah.</li>
                 </ul>
               </div>
@@ -248,6 +255,9 @@
         <div class="mb-16">
           <h2 class="text-2xl md:text-3xl font-bold text-[#27AE60] mb-8 text-center uppercase tracking-wider">Galeri Kegiatan</h2>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+            
+            <!-- PANDUAN: Copy blok <div> di bawah ini untuk menambah foto baru. Foto akan otomatis menyesuaikan grid. -->
+            
             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
               <img src="Assets/img/kegiatan.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
             </div>
@@ -260,6 +270,23 @@
              <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
               <img src="Assets/img/kegiatan4.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
             </div>
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan6.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+            </div>
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan7.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+            </div>
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan8.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+            </div>
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan9.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+            </div>
+             <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden group shadow-sm">
+              <img src="Assets/img/kegiatan10.jpeg" onerror="this.src='https://placehold.co/400x400'" alt="Kegiatan" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 cursor-pointer" onclick="openLightbox(this)">
+            </div>
+            
+
             </div>
         </div>
 
@@ -298,48 +325,6 @@
       <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain rounded shadow-2xl transition-transform duration-300 scale-95" onclick="event.stopPropagation()" />
     </div>
 
-    <script>
-      const navbar = document.getElementById('navbar');
-      window.onscroll = () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
-          navbar.classList.remove('py-4');
-        } else {
-          navbar.classList.remove('scrolled');
-          navbar.classList.add('py-4');
-        }
-      };
-
-      const menu = document.getElementById('menu');
-      const menuBtn = document.getElementById('menuBtn');
-
-      menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('translate-x-full');
-      });
-
-      function closeMenu() {
-        menu.classList.add('translate-x-full');
-      }
-
-      function openLightbox(img) {
-        const lb = document.getElementById('lightbox');
-        const lbImg = document.getElementById('lightbox-img');
-        lbImg.src = img.src;
-        lb.classList.remove('hidden');
-        lb.classList.add('flex');
-        setTimeout(() => lbImg.classList.remove('scale-95'), 10);
-      }
-
-      function closeLightbox() {
-        const lb = document.getElementById('lightbox');
-        const lbImg = document.getElementById('lightbox-img');
-        lbImg.classList.add('scale-95');
-        setTimeout(() => {
-          lb.classList.add('hidden');
-          lb.classList.remove('flex');
-        }, 200);
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
-

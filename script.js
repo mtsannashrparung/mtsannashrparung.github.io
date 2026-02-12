@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // A. Ubah Style Navbar
     if (window.scrollY > 50) {
-      navbar.classList.add("bg-[#27AE60]/90", "shadow-xl", "backdrop-blur-sm");
-      navbar.classList.remove("bg-transparent", "border-b-2", "border-green-200");
+      navbar.classList.add("scrolled");
+      navbar.classList.remove("py-4");
     } else {
-      navbar.classList.remove("bg-[#27AE60]/90", "shadow-xl", "backdrop-blur-sm");
-      navbar.classList.add("bg-transparent", "border-b-2", "border-green-200");
+      navbar.classList.remove("scrolled");
+      navbar.classList.add("py-4");
     }
 
     // B. Highlight Link Aktif
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Saat menu BUKA, buat navbar jadi invisible (transparan total)
     if (navbar) {
-      navbar.classList.remove("bg-[#27AE60]/90", "bg-[#27AE60]", "shadow-xl", "backdrop-blur-sm", "border-b-2", "border-green-200");
+      navbar.classList.remove("scrolled", "py-4");
       navbar.classList.add("bg-transparent", "border-none");
     }
   }
@@ -124,11 +124,52 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3. LOGIKA CAROUSEL & ANIMASI
   // ===============================================
   if (slider) {
+    // Event Click Tombol Next/Prev
     document.addEventListener("click", (e) => {
       const items = slider.querySelectorAll(".item");
       if (e.target.matches(".next")) slider.append(items[0]);
       if (e.target.matches(".prev")) slider.prepend(items[items.length - 1]);
     });
+
+    // Event Swipe (Touch) untuk Mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    
+    // Gunakan parentElement (section) agar area sentuh lebih luas
+    const sliderArea = slider.parentElement || slider;
+
+    sliderArea.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    sliderArea.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const threshold = 50; // Jarak minimal swipe
+      const xDiff = touchStartX - touchEndX;
+      const yDiff = touchStartY - touchEndY;
+      const items = slider.querySelectorAll(".item");
+
+      // Cek apakah gerakan horizontal lebih dominan daripada vertikal (agar tidak bentrok saat scroll)
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (Math.abs(xDiff) > threshold) {
+          if (xDiff > 0) {
+            // Swipe ke Kiri -> Next
+            slider.append(items[0]);
+          } else {
+            // Swipe ke Kanan -> Prev
+            slider.prepend(items[items.length - 1]);
+          }
+        }
+      }
+    }
   }
 
   if (typeof ScrollReveal !== "undefined") {
@@ -144,7 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sr.reveal("#tentang h3", { origin: "left", interval: 200 });
     sr.reveal("#tentang ul li", { origin: "bottom", interval: 100 });
     sr.reveal(".program-card", { origin: "bottom", interval: 200, scale: 0.9 });
-    sr.reveal("h1", { origin: "top", distance: "30px" });
+    sr.reveal("section h1", { origin: "top", distance: "30px" });
+    sr.reveal(".news-card", { origin: "bottom", interval: 200 });
   }
 });
 

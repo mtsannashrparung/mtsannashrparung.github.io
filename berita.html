@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth overflow-x-hidden">
+<html lang="id" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,6 +18,17 @@
     <!-- IONICONS -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+      /* Smooth transition untuk navbar */
+      #navbar.scrolled {
+        background-color: rgba(39, 174, 96, 0.95);
+        backdrop-filter: blur(8px);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+    </style>
   </head>
 
   <body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
@@ -29,10 +40,10 @@
       <nav class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
         
         <!-- LOGO -->
-        <a href="index.html" class="flex h-full gap-3 md:text-2xl font-bold text-white tracking-wide z-50">
+        <a href="../index.html" class="flex h-full gap-3 md:text-2xl font-bold text-white tracking-wide z-50">
           <img src="Assets/img/logo2.png" alt="Logo MTs" width="35px" />
           <div class="h-full flex items-center">
-            <h1 class="text-center pt-1 md:pt-0">MTs An Nashr</h1>
+            <h1 class="text-center pt-1 md:pt-0 drop-shadow-lg">MTs An Nashr</h1>
           </div>
         </a>
 
@@ -43,9 +54,17 @@
 
         <!-- MENU LINKS -->
         <!-- Note: Class 'nav-link' sengaja tidak dipakai di sini agar warna tidak diubah oleh script.js scrollspy -->
-        <div id="menu" class="fixed inset-0 z-40 flex flex-col items-start space-y-8 p-[3rem] bg-[#27AE60]/95 transform translate-x-full transition-transform duration-300 md:ps-[3rem] md:pt-0 md:pb-0 md:pe-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end">
+        <div id="menu" class="fixed inset-0 z-40 flex flex-col items-start space-y-8 p-[3rem] bg-[#27AE60] transform translate-x-[40%] transition-transform duration-300 md:ps-[3rem] md:pt-0 md:pb-0 md:pe-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end">
           
-          <a href="index.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
+          <a href="../index.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
+          
+          <a href="profil.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Profil</a>
+          
+          <a href="profil.html#tentang" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Tentang</a>
+          
+          <a href="profil.html#program" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Program</a>
+          
+          <a href="profil.html#fasilitas" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Fasilitas</a>
           
           <a href="informasi.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Informasi</a>
           
@@ -59,7 +78,7 @@
     <!-- =============================================== -->
     <!-- HERO SECTION (JUDUL HALAMAN) -->
     <!-- =============================================== -->
-    <section class="relative bg-[url('Assets/img/bgfix.jpeg')] bg-cover bg-center h-[40vh] flex items-center justify-center text-white">
+    <section class="relative bg-[url('Assets/img/perpus.jpeg')] bg-cover bg-center h-[40vh] flex items-center justify-center text-white">
       <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
       <div class="relative z-10 text-center px-4 animate__animated animate__fadeInDown">
         <h1 class="text-4xl md:text-5xl font-bold mb-2">Berita Sekolah</h1>
@@ -210,5 +229,4 @@
 
     <script src="script.js"></script>
   </body>
-
 </html>
