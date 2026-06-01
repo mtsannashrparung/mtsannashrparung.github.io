@@ -1,0 +1,25 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 12s linear infinite;
+}
+
+.active {
+  color: gold;
+}
+
+/* Sembunyikan scrollbar untuk horizontal scroll */
+.hide-scroll-bar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id" class="overflow-x-hidden scroll-smooth scroll-pt-20">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita & Informasi - MTs An-Nashr</title>
+    <link rel="icon" href="Assets/img/logo2.png" />
+    
+    <!-- TAILWIND CSS (Sama dengan index.html) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- ANIMATE.CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- IONICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+      /* Smooth transition untuk navbar */
+      #navbar.scrolled {
+        background-color: rgba(39, 174, 96, 0.95);
+        backdrop-filter: blur(8px);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- =============================================== -->
+    <!-- HEADER / NAVBAR -->
+    <!-- =============================================== -->
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-all duration-300 py-4">
+      <nav class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+        
+        <!-- LOGO -->
+        <a href="index.html" class="flex items-center gap-3 md:text-2xl font-bold text-white tracking-wide z-50">
+          <img src="Assets/img/logo2.png" alt="Logo MTs" class="w-9 md:w-10 h-auto object-contain" />
+          <h1 class="drop-shadow-lg">MTs An Nashr</h1>
+        </a>
+
+        <!-- TOMBOL MENU MOBILE -->
+        <button id="menuBtn" class="md:hidden text-white text-3xl z-50 focus:outline-none">
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <!-- MENU LINKS -->
+        <!-- Note: Class 'nav-link' sengaja tidak dipakai di sini agar warna tidak diubah oleh script.js scrollspy -->
+        <div id="menu" class="fixed top-0 right-0 bottom-0 w-1/2 sm:w-60 z-40 flex flex-col items-start space-y-8 p-5 pt-24 bg-[#27AE60] transform translate-x-full transition-transform duration-300 md:w-auto md:p-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end">
+          <a href="index.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
+          <a href="profil.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Profil</a>
+          <a href="profil.html#tentang" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Tentang</a>
+          <a href="profil.html#program" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Program</a>
+          <a href="profil.html#fasilitas" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Fasilitas</a>
+          <a href="ppdb.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">PPDB</a>
+          <a href="galeri.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Galeri</a>
+          <a href="berita.html" onclick="closeMenu()" class="font-bold text-yellow-300 transition drop-shadow-md border-b-2 border-yellow-300">Berita</a>
+          <a href="sertifikat-tahfidz.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Sertifikat</a>
+          
+        </div>
+      </nav>
+    </header>
+
+    <!-- =============================================== -->
+    <!-- HERO SECTION (JUDUL HALAMAN) -->
+    <!-- =============================================== -->
+    <section class="relative bg-[url('Assets/img/perpus.jpeg')] bg-cover bg-center h-[40vh] flex items-center justify-center text-white">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+      <div class="relative z-10 text-center px-4 animate__animated animate__fadeInDown">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">Berita Sekolah</h1>
+        <p class="text-lg text-gray-200">Kabar terbaru, prestasi, dan artikel inspiratif</p>
+      </div>
+    </section>
+
+    <!-- =============================================== -->
+    <!-- MAIN CONTENT (DAFTAR BERITA) -->
+    <!-- =============================================== -->
+    <main class="flex-grow py-16 px-4 sm:px-6">
+      <div class="container mx-auto">
+        
+        <!-- JUDUL SECTION -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-[#27AE60] mb-4">Arsip Berita</h2>
+          <div class="w-24 h-1 bg-[#27AE60] mx-auto rounded-full"></div>
+        </div>
+
+        <!-- GRID BERITA -->
+        <div id="berita-public-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Berita akan dimuat secara otomatis dari Supabase di sini -->
+        </div>
+        <div id="loading-berita-public" class="text-center py-20 text-gray-500 animate-pulse">
+            <ion-icon name="newspaper-outline" class="text-4xl"></ion-icon>
+            <p class="mt-2">Memuat Arsip Berita...</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-10 z-10 relative">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center mb-4">
+          <img src="Assets/img/logo2.png" alt="Logo MTs An Nashr" loading="lazy" class="w-12 h-12 object-contain" />
+        </div>
+
+        <h2 class="text-2xl font-bold mb-2">MTs An Nashr</h2>
+
+        <div class="flex flex-col justify-center items-center mb-8">
+          <div class="flex justify-center gap-6 mb-4">
+            <a href="https://www.instagram.com/mts.annashrparung/#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://web.facebook.com/profile.php?id=100087312590437" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://www.youtube.com/@AnnashrParung" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+
+          <p class="text-gray-500 text-sm max-w-md mx-auto">
+            Jl. Balai Desa, Gg. Bambu Kuning, 02/03, Jabon Mekar, Kec. Parung, Kab. Bogor
+          </p>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-6">
+          <p class="text-gray-500 text-xs tracking-widest uppercase">
+            <a href="admin.html?kunci=rahasia123" class="hover:text-gray-400 transition">&copy; 2026</a> MTs An Nashr. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Supabase CDN & Fetch Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const supabaseUrl = 'https://ejhmwxqbpmjkvudazjmc.supabase.co';
+      const supabaseKey = 'sb_publishable_pfloSKirXdrAE2lj7ygHNg_o-aMJPjz';
+      const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        const grid = document.getElementById('berita-public-grid');
+        const loader = document.getElementById('loading-berita-public');
+        
+        const { data, error } = await supabaseClient.from('berita').select('*').order('created_at', { ascending: false });
+        loader.classList.add('hidden');
+
+        if (error || !data || data.length === 0) {
+          grid.innerHTML = `<div class="col-span-full text-center text-gray-500 mt-10">Belum ada berita yang dipublikasikan saat ini.</div>`;
+          return;
+        }
+
+        data.forEach(item => {
+          // Arahkan ke link eksternal JIKA ADA, jika kosong maka arahkan ke halaman detail kita sendiri
+          const href = item.link_eksternal ? item.link_eksternal : `detail-berita.html?id=${item.id}`; 
+          
+          grid.innerHTML += `
+            <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition duration-300 border border-gray-100 flex flex-col h-full">
+              <div class="h-56 overflow-hidden relative group">
+                <img src="${item.image_url}" alt="Cover Berita" loading="lazy" decoding="async" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <div class="flex items-center gap-2 text-xs font-semibold text-[#27AE60] mb-3 uppercase tracking-wider">
+                  <ion-icon name="calendar-outline"></ion-icon> <span>${new Date(item.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight hover:text-[#27AE60] transition">${item.judul}</h3>
+                <p class="text-gray-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-grow">${item.ringkasan}</p>
+                <a href="${href}" ${item.link_eksternal ? 'target="_blank"' : ''} class="inline-flex items-center gap-2 text-white bg-[#27AE60] hover:bg-green-700 px-4 py-2 rounded-lg text-sm font-semibold transition w-fit mt-auto">
+                  Baca Selengkapnya <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+              </div>
+            </article>`;
+        });
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

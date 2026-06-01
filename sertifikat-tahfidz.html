@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id" class="overflow-x-hidden scroll-smooth scroll-pt-20">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cetak Sertifikat Tahfidz - MTs An-Nashr</title>
+    <link rel="icon" href="Assets/img/logo2.png" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+      /* Custom font untuk nama di sertifikat agar lebih elegan */
+      
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Playfair+Display:wght@600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+      
+      .font-nama { 
+        font-family: 'Cormorant Garamond', serif; 
+      }
+
+      .font-elegan{
+          font-family:'Playfair Display', serif;
+      }
+
+      .font-ptserif {
+          font-family: 'PT Serif', serif;
+      }
+      
+      /* Smooth transition untuk navbar */
+      #navbar.scrolled {
+        background-color: rgba(39, 174, 96, 0.95);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen relative">
+
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-transparent transition-all duration-300 py-4">
+      <nav class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4">
+        <a href="index.html" class="flex items-center gap-3 md:text-2xl font-bold text-white tracking-wide z-50">
+          <img src="Assets/img/logo2.png" alt="Logo MTs" class="w-9 md:w-10 h-auto object-contain" />
+          <h1 class="drop-shadow-lg">MTs An Nashr</h1>
+        </a>
+
+        <button id="menuBtn" class="md:hidden text-white text-3xl z-50 focus:outline-none">
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <div id="menu" class="fixed top-0 right-0 bottom-0 w-1/2 sm:w-60 z-40 flex flex-col items-start space-y-8 p-5 pt-24 bg-[#27AE60] transform translate-x-full transition-transform duration-300 md:w-auto md:p-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end">
+          <a href="index.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
+          <a href="profil.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Profil</a>
+          <a href="profil.html#tentang" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Tentang</a>
+          <a href="profil.html#program" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Program</a>
+          <a href="profil.html#fasilitas" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Fasilitas</a>
+          <a href="ppdb.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">PPDB</a>
+          <a href="galeri.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Galeri</a>
+          <a href="berita.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Berita</a>
+          <a href="sertifikat-tahfidz.html" onclick="closeMenu()" class="font-bold text-yellow-300 transition drop-shadow-md border-b-2 border-yellow-300">Sertifikat</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="relative bg-[url('Assets/img/kegiatan.jpeg')] bg-cover bg-center h-[35vh] md:h-[40vh] flex items-center justify-center text-white mt-0">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 text-center px-6 animate__animated animate__fadeInDown">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Sertifikat Tahfidz</h1>
+        <p class="text-base md:text-lg text-gray-200 max-w-2xl mx-auto">Apresiasi pencapaian hafalan Al-Qur'an siswa-siswi kebanggaan kami.</p>
+      </div>
+    </section>
+
+    <main class="flex-grow flex items-center justify-center py-16 px-4 relative z-10 -mt-10">
+      <div class="max-w-lg w-full bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 text-center animate__animated animate__fadeInUp">
+        
+        <div class="w-20 h-20 mx-auto bg-yellow-100 rounded-full flex items-center justify-center mb-6 shadow-inner">
+            <ion-icon name="medal" class="text-4xl text-yellow-500"></ion-icon>
+        </div>
+        
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Unduh e-Sertifikat</h2>
+        <p class="text-gray-500 text-sm mb-8">Masukkan NISN kamu untuk mengunduh sertifikat digital pencapaian hafalan Al-Qur'an.</p>
+        
+        <form id="search-form" class="space-y-6">
+          <div class="relative">
+            <ion-icon name="search" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl"></ion-icon>
+            <input type="text" id="nisn-input" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Contoh: 0102345678" required class="w-full bg-gray-50 border border-gray-300 text-gray-800 px-12 py-4 rounded-xl focus:outline-none focus:border-[#27AE60] focus:ring-1 focus:ring-[#27AE60] transition font-mono tracking-widest text-center text-lg shadow-inner">
+          </div>
+          
+          <button type="submit" id="btn-download" class="w-full bg-[#27AE60] hover:bg-green-700 text-white font-bold py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-2 text-lg active:scale-95">
+            <ion-icon name="download-outline" class="text-xl"></ion-icon> Cari & Unduh
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-10 z-10 relative">
+      <div class="container mx-auto px-6 text-center">
+        <div class="flex justify-center mb-4">
+          <img src="Assets/img/logo2.png" alt="Logo MTs An Nashr" loading="lazy" class="w-12 h-12 object-contain" />
+        </div>
+
+        <h2 class="text-2xl font-bold mb-2">MTs An Nashr</h2>
+
+        <div class="flex flex-col justify-center items-center mb-8">
+          <div class="flex justify-center gap-6 mb-4">
+            <a href="https://www.instagram.com/mts.annashrparung/#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://web.facebook.com/profile.php?id=100087312590437" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://www.youtube.com/@AnnashrParung" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+
+          <p class="text-gray-500 text-sm max-w-md mx-auto">
+            Jl. Balai Desa, Gg. Bambu Kuning, 02/03, Jabon Mekar, Kec. Parung, Kab. Bogor
+          </p>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-6">
+          <p class="text-gray-500 text-xs tracking-widest uppercase">
+            <a href="admin.html?kunci=rahasia123" class="hover:text-gray-400 transition">&copy; 2026</a> MTs An Nashr. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    
+    <div id="loading-overlay" class="fixed inset-0 z-[200] bg-white/95 backdrop-blur-sm hidden flex-col items-center justify-center transition-opacity">
+        <div class="relative flex justify-center items-center mb-6">
+            <div class="absolute animate-ping w-20 h-20 rounded-full bg-yellow-500/50"></div>
+            <ion-icon name="sync-outline" class="animate-spin text-6xl text-yellow-500 relative z-10"></ion-icon>
+        </div>
+        <h2 class="text-2xl font-extrabold text-gray-800 mb-2 tracking-wide animate-pulse">Sertifikat Sedang Diproses...</h2>
+        <p class="text-gray-500 text-sm">Mohon tunggu sebentar, file PDF akan segera diunduh.</p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- TEMPLATE RAHASIA SERTIFIKAT (IDENTIK DENGAN REFERENSI GAMBAR) -->
+    <!-- ========================================================= -->
+    <div class="fixed top-0 left-0 opacity-0 pointer-events-none z-[-50]"
+     style="width:2000px;height:1414px;">
+
+        <div id="cert-element"
+             class="relative bg-white"
+             style="width:2000px;height:1414px;">
+
+            <img
+                src="Assets/img/Sertifikat.jpeg"
+                class="absolute inset-0 w-full h-full object-cover"
+            >
+
+            <!-- AREA KANAN -->
+            <div class="absolute left-[765px] top-0 w-[1040px] h-full">
+
+                <!-- NOMOR -->
+                <p id="cert-nomor"
+                   class="absolute top-[282px] left-[115px] w-full text-center font-bold text-slate-700 tracking-widest"
+                   style="font-size:30px;font-family:'Times New Roman', Times, serif;">
+                   037 /10-657/MTS AN/VI/2026
+                </p>
+
+
+                <!-- NAMA -->
+                <div class="absolute top-[465px] left-[70px] w-full">
+
+                    <h1 id="cert-nama"
+                        class="font-nama italic text-center text-slate-800 leading-none"
+                        style="
+                        font-size:72px;
+                        font-weight:700;
+                        white-space:nowrap;
+                        overflow:hidden;
+                        text-overflow:ellipsis;">
+                        NAMA SISWA
+                    </h1>
+
+                </div>
+
+
+                <!-- KATEGORI LABEL -->
+                <p class="absolute top-[535px] left-[70px] w-full text-center font-nama italic text-[#b58b2c]"
+                   style="font-size:55px;font-weight:700;">
+                    Kategori
+                </p>
+
+
+                <!-- JUMLAH -->
+                <p id="cert-kategori"
+                   class="absolute top-[580px] left-[70px] w-full text-center font-nama italic text-[#b58b2c]"
+                   style="font-size:110px;font-weight:700;">
+                    3 Juz
+                </p>
+
+
+                <!-- DETAIL -->
+                <p id="cert-detail-juz"
+                   class="absolute top-[740px] left-[70px] w-full text-center font-ptserif italic text-[#b58b2c]"
+                   style="font-size:42px;font-weight:700;">
+                    (Juz 1, 29, dan 30)
+                </p>
+
+
+                <!-- TANGGAL -->
+                <div class="absolute text-right" style="top: 930px; right: 30px;">
+
+                    <p id="cert-tanggal-masehi"
+                       class="font-elegan text-slate-700 border-b-2 border-slate-600"
+                       style="font-size:28px;font-weight:700;">
+                       Bogor, 24 April 2026 M
+                    </p>
+
+                    <p id="cert-tanggal-hijriyah"
+                       class="mt-[1px] font-elegan text-slate-700"
+                       style="font-size:28px;font-weight:700;">
+                       06 Dzulqo'dah 1447 H
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      const supabaseUrl = 'https://ejhmwxqbpmjkvudazjmc.supabase.co';
+      const supabaseKey = 'sb_publishable_pfloSKirXdrAE2lj7ygHNg_o-aMJPjz';
+      const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+      const form = document.getElementById('search-form');
+      const btnDownload = document.getElementById('btn-download');
+
+      const certNama = document.getElementById('cert-nama');
+      const certNomor = document.getElementById('cert-nomor');
+      const certKategori = document.getElementById('cert-kategori');
+      const certDetailJuz = document.getElementById('cert-detail-juz');
+      const certTanggalMasehi = document.getElementById('cert-tanggal-masehi');
+      const certTanggalHijriyah = document.getElementById('cert-tanggal-hijriyah');
+      const certElement = document.getElementById('cert-element');
+      
+      const loadingOverlay = document.getElementById('loading-overlay');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const nisn = document.getElementById('nisn-input').value.trim();
+        
+        btnDownload.innerHTML = `<ion-icon name="sync-outline" class="animate-spin text-xl"></ion-icon> Memproses...`;
+        btnDownload.disabled = true;
+        
+        loadingOverlay.classList.remove('hidden');
+        loadingOverlay.classList.add('flex');
+
+        // Memastikan font dan gambar sudah termuat sebelum html2canvas memprosesnya
+        // Hal ini mencegah proses nyangkut/stuck di tengah jalan akibat koneksi internet HP lambat
+        await document.fonts.ready;
+        const certImg = document.querySelector('#cert-element img');
+        if (!certImg.complete) {
+            await new Promise((resolve) => {
+                certImg.onload = resolve;
+            });
+        }
+
+        try {
+            const { data, error } = await supabaseClient
+                .from('sertifikat_tahfidz')
+                .select('*')
+                .eq('nisn', nisn)
+                .single(); 
+
+            if (error || !data) {
+                throw new Error("Sertifikat tidak ditemukan. Pastikan NISN sudah benar.");
+            }
+
+            const namaSiswa = data.nama_siswa.toUpperCase();
+            certNama.innerText = namaSiswa;
+
+            /* AUTO RESIZE NAMA */
+            if(namaSiswa.length > 35){
+                certNama.style.fontSize = "42px";
+            }
+            else if(namaSiswa.length > 28){
+                certNama.style.fontSize = "52px";
+            }
+            else if(namaSiswa.length > 22){
+                certNama.style.fontSize = "62px";
+            }
+            else{
+                certNama.style.fontSize = "72px";
+            }
+
+            /* DATA */
+            
+            certNomor.innerText = data.nomor_sertifikat || "037 /10-657/MTS AN/VI/2026";
+            certKategori.innerText = data.kategori_hafalan || "-";
+            certDetailJuz.innerText = `(${data.detail_juz || '-'})`;
+
+            /* FORMAT TANGGAL */
+            const formattedDate = new Date(data.tanggal_masehi).toLocaleDateString('id-ID', { day:'numeric', month:'long', year:'numeric' });
+            certTanggalMasehi.innerText = `Bogor, ${formattedDate} M`;
+            certTanggalHijriyah.innerText = `${data.tanggal_hijriyah}`;
+
+            const safeFileName = data.nama_siswa.replace(/[^a-zA-Z0-9]/g, '_');
+
+            const isMobile = window.innerWidth < 768;
+            const opt = {
+                margin:       0,
+                filename:     `Sertifikat_Tahfidz_${safeFileName}.pdf`,
+                image:        { type: 'jpeg', quality: isMobile ? 0.85 : 0.95 }, // Kualitas dinaikkan agar tidak blur
+                html2canvas:  { 
+                    scale: isMobile ? 0.65 : 1, // Titik seimbang: Hasil tajam (HD) tapi proses tetap ringan di HP
+                    useCORS: true, 
+                    logging: false, // Matikan logging background untuk mempercepat proses CPU
+                    scrollY: 0,
+                    scrollX: 0,
+                    windowWidth: 2000,
+                    windowHeight: 1414
+                }, 
+                jsPDF:        { unit: 'px', format: [2000, 1414], orientation: 'landscape', compress: false } 
+            };
+            
+            // Batas waktu disesuaikan menjadi 20 detik untuk memberikan waktu render resolusi yang lebih tinggi
+            await Promise.race([
+                html2pdf().set(opt).from(certElement).save(),
+                new Promise((_, reject) => setTimeout(() => reject(new Error("Waktu proses terlalu lama. Silakan gunakan Laptop/Komputer untuk mengunduh.")), 20000))
+            ]);
+            
+            Swal.fire({ icon: 'success', title: 'Berhasil!', text: 'Sertifikat berhasil diunduh. Silakan cek folder download kamu.', confirmButtonColor: '#27AE60' });
+
+        } catch (error) {
+            Swal.fire({ icon: 'error', title: 'Gagal', text: error.message, confirmButtonColor: '#d33' });
+        } finally {
+            btnDownload.innerHTML = `<ion-icon name="download-outline" class="text-xl"></ion-icon> Cari & Unduh Sertifikat`;
+            btnDownload.disabled = false;
+            
+            loadingOverlay.classList.add('hidden');
+            loadingOverlay.classList.remove('flex');
+        }
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
